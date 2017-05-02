@@ -19,6 +19,8 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe ContactsController, type: :controller do
+  # authentication is required
+  login_user
 
   # This should return the minimal set of attributes required to create a valid
   # Contact. As you add validations to Contact, be sure to

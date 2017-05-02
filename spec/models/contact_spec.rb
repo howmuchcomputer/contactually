@@ -7,7 +7,7 @@ RSpec.describe Contact, type: :model do
                                         last_name: "Smith",
                                         email_address: "john@gmail.com",
                                         phone_number: "1118675309",
-                                        company_name: "John Smith LLC.") }
+                                        company_name: "John Smith LLC.")}
   end
 
   describe "relationships" do
