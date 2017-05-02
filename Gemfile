@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'react-rails'
 gem 'devise'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2'
