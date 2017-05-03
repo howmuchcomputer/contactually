@@ -5,5 +5,6 @@ FactoryGirl.define do
     email_address "john@gmail.com"
     phone_number "1118675309"
     company_name "John Smith LLC."
+    user 
   end
 end
