@@ -1,5 +1,0 @@
-<%= form_tag([:api, :v1, :parse], action: "parse", multipart: true) do %>
-  <%= file_field_tag 'contacts' %>
-  <%= submit_tag %>
-<% end %>
-<%= react_component 'ContactList', contacts: @contacts %>
