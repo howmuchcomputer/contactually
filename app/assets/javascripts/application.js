@@ -24,4 +24,14 @@ $(function() {
       $("#notice").fadeOut();
     }, 3500);
   });
+  
+  // auto submit hidden form when file selected
+  $("#upload-field").change(function() {
+    $("#upload-form").submit();
+  });
+
+  // upload button proxy for hidden form
+  $("#upload-btn-proxy").click(function() {
+    $("#upload-field").click();
+  });
 });

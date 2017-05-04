@@ -5,13 +5,13 @@
 <div class="jumbotron">
   <h1>Welcome to Contactually Lite</h1>
   <p>upload a comma delimited contact list to get started</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Upload</a></p>
+  <p><a id="upload-btn-proxy" class="btn btn-primary btn-lg" role="button">Upload</a></p>
 </div>
 
 <div class="hide">
-  <%= form_tag(action: "import", multipart: true) do %>
-    <%= file_field_tag 'file', id: 'upload' %>
-    <%= submit_tag %>
+  <%= form_tag({action: "import", multipart: true}, {id: "upload-form"}) do %>
+    <%= file_field_tag 'file', id: 'upload-field' %>
+    <%= submit_tag "submit upload", id: "submit-upload" %>
   <% end %>
 </div>
 
