@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Contacts</h1>
-<%= react_component 'ContactList', contacts: @contacts %>
-
-<br>
-<%= link_to 'New Contact', new_contact_path %>
 
 <%= form_tag(action: "import", multipart: true) do %>
   <%= file_field_tag 'file' %>
   <%= submit_tag %>
 <% end %>
+
+<%= react_component 'FilterableContactList', contacts: @contacts %>
+
