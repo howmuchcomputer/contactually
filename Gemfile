@@ -2,12 +2,18 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
+# react rails helpers
 gem 'react-rails'
+# user authenticaion
 gem 'devise'
+# css styles
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'responders'
+# normalization of names
+gem 'capitalize-names'
 
 group :production do
+  # for heroku
   gem 'rails_12factor'
 end
 
