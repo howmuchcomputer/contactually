@@ -222,6 +222,7 @@ DEPENDENCIES
   pry
   rails (~> 4.2)
   react-rails
+  responders
   rspec-rails
   rubocop
   sass-rails (~> 5.0)

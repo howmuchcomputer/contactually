@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = current_user.contacts
+    @contacts = current_user.contacts.order(:email_address)
   end
 
   # GET /contacts/1
@@ -60,6 +60,11 @@ class ContactsController < ApplicationController
       format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def import
+    Contact.import(params[:file], current_user.id)
+    redirect_to :back, notice: "Import processed"
   end
 
   private
