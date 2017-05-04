@@ -7,7 +7,7 @@ class Contact extends React.Component {
   destroy() {
     var self = this;
     $.ajax({ 
-      url: '/api/v1/contacts/' + this.props.contact.id, 
+      url: `/contacts/${this.props.contact.id}`,
       type: 'DELETE', 
       success: (res) => {
         self.setState({removed: true});
