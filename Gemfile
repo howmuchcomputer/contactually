@@ -49,6 +49,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  # assist with documentation
+  gem 'annotate'
 end
 
 group :development, :test do

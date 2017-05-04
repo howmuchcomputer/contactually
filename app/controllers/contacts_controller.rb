@@ -18,6 +18,7 @@ class ContactsController < ApplicationController
     end
   end
 
+  # POST /contact/import
   def import
     Contact.import(params[:file], current_user.id)
     redirect_to :back, notice: "Import processed"
@@ -31,6 +32,10 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:first_name, :last_name, :email_address, :phone_number, :company_name)
+      params.require(:contact).permit(:first_name, 
+                                      :last_name, 
+                                      :email_address, 
+                                      :phone_number, 
+                                      :company_name)
     end
 end
