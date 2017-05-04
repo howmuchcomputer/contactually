@@ -11,9 +11,28 @@ RSpec.describe "Contacts", type: :request do
       sign_out(@user)
     end
 
-    it "works! (now write some real specs)" do
+    it "return a 200 status" do
       get contacts_path
       expect(response).to have_http_status(200)
+    end
+
+    it "should render the index template" do
+      get contacts_path
+      expect(response).to render_template(:index)
+    end
+
+    context "without contacts" do
+      it "contacts should be empty" do
+        get contacts_path
+        expect(assigns[:contacts].empty?).to be_truthy 
+      end
+    end
+
+    context "with contacts" do
+      it "should load the user's contacts" do
+        get contacts_path
+        expect(assigns[:contacts]).to eq @user.contacts
+      end
     end
   end
 end
