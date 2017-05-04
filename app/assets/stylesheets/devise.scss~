@@ -2,7 +2,3 @@
 @import "bootstrap-sprockets";
 body { padding-top: 80px; }
 @import "bootstrap";
-
-.hide {
-  display: none;
-}

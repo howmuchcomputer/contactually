@@ -1,0 +1,11 @@
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.devise-wrapper {
+  width: 500px;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

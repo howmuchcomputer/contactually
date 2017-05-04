@@ -16,12 +16,4 @@
 //= require react
 //= require react_ujs
 //= require components
-
-$(function() {
-  // remove flash notices
-  $(document).on('turbolinks:load', function() {
-    setTimeout(function() {
-      $("#notice").fadeOut();
-    }, 3500);
-  });
-});
+//= require_tree .
