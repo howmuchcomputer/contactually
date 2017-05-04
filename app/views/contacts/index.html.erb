@@ -1,11 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Contacts</h1>
-
-<%= form_tag(action: "import", multipart: true) do %>
-  <%= file_field_tag 'file' %>
-  <%= submit_tag %>
+<% if notice %>
+  <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
 
-<%= react_component 'FilterableContactList', contacts: @contacts %>
+<div class="jumbotron">
+  <h1>Welcome to Contactually Lite</h1>
+  <p>upload a comma delimited contact list to get started</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Upload</a></p>
+</div>
+
+<div class="hide">
+  <%= form_tag(action: "import", multipart: true) do %>
+    <%= file_field_tag 'file', id: 'upload' %>
+    <%= submit_tag %>
+  <% end %>
+</div>
+
+<% if @contacts.any? %>
+  <%= react_component 'FilterableContactList', contacts: @contacts %>
+<% end %>
 

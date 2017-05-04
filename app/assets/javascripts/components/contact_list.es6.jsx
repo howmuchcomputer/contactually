@@ -8,7 +8,7 @@ class ContactList extends React.Component {
 
   render () {
     return (
-      <table>
+      <table className="table table-striped">
         <thead>
           <tr>
             <th>First name</th>

@@ -1,1 +1,8 @@
+// import the CSS framework
+@import "bootstrap-sprockets";
+body { padding-top: 60px; }
 @import "bootstrap";
+
+.hide {
+  display: none;
+}

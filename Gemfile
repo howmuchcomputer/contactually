@@ -7,15 +7,14 @@ gem 'react-rails'
 # user authenticaion
 gem 'devise'
 # css styles
-gem 'bootstrap', '~> 4.0.0.alpha6'
-gem 'responders'
+gem 'bootstrap-sass'
 # normalization of names
 gem 'capitalize-names'
-
 group :production do
   # for heroku
   gem 'rails_12factor'
 end
+gem 'responders'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2'
