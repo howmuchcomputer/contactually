@@ -38,13 +38,5 @@ class Contact < ActiveRecord::Base
   def normalize_phone_number
     return "" unless phone_number
     phone_number.gsub(/\s|-|\.|\(|\)/, "").downcase
-    #full_num, extension = phone_number.split("x")
-    #if full_num.length > 10
-    #  num = full_num.split("").last(10).join
-    #  country_code = full_num[0...(full_num.length - 10)]
-    #  [country_code, num, extension.to_s].join("#")
-    #else
-    #  [full_num, extension.to_s].join("#")
-    #end
   end
 end

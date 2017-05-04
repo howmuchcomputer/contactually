@@ -15,6 +15,19 @@ class Contact extends React.Component {
     });
   }
 
+  _normalizePhoneNumber(number) {
+    let splitNumber = number.split("x");
+    let phone = splitNumber[0];
+    let extension = splitNumber[1] ? ` x${splitNumber[1]}` : "";
+    
+    if (phone.length > 10) {
+      return `${'+' + phone.slice(0, phone.length - 10) + ' '}${phone.slice(-10).replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}${extension}`;
+      
+    } else {
+      return `${phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}${extension}`;
+    }
+  }
+
   render () {
     if (this.state.removed) {
       return <tr className="hide"></tr>;
@@ -34,7 +47,7 @@ class Contact extends React.Component {
         <td>{first_name}</td>
         <td>{last_name}</td>
         <td>{email_address}</td>
-        <td>{phone_number}</td>
+        <td>{this._normalizePhoneNumber(phone_number)}</td>
         <td>{company_name}</td>
         <td><div className="btn btn-danger" onClick={this.destroy.bind(this)}>X</div></td>
       </tr>
